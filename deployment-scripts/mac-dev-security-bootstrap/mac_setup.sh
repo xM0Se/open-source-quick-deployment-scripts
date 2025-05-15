@@ -26,7 +26,7 @@ readonly FONTS=(
 )
 readonly CLI_TOOLS=(
   atuin bat btop cmatrix eza fzf git neovim nmap stow thefuck tldr yazi
-  zoxide zsh-autosuggestions zsh-syntax-highlighting lazygit
+  zoxide zsh-autosuggestions zsh-syntax-highlighting lazygit bitwarden-cli
 )
 readonly WALLPAPERS=(1 2 3 4)
 
@@ -206,7 +206,7 @@ main() {
     clear
     echo "No MAS apps will be installed."
   fi
-clear
+  clear
   if yes_no "Hide the Dock ?" Y; then
     clear
     echo "Hiding Dock…"
@@ -215,7 +215,7 @@ clear
     defaults write com.apple.dock autohide-time-modifier -float 0.5
     killall Dock # Restart Dock to apply changes
   fi
-clear
+  clear
   if yes_no "Enable firewall with stealth mode?" Y; then
     clear
     echo "Turning on firewall…"
@@ -233,7 +233,7 @@ clear
     /usr/bin/sudo /usr/bin/defaults write /Library/Preferences/com.apple.SoftwareUpdate CriticalUpdateInstall -bool true
     /usr/bin/sudo /usr/bin/defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool TRUE
   fi
-clear
+  clear
   if yes_no "" Y; then
     clear
     #set minimum passcode leangth to 20
@@ -263,7 +263,7 @@ clear
     stow . # Use GNU Stow to symlink your dotfiles
     cd "$HOME"
   fi
-clear
+  clear
   if yes_no "Set a desktop wallpaper?" Y; then
     clear
     choice=$(select_option "Pick wallpaper number" 1 "${WALLPAPERS[*]}")
